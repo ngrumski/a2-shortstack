@@ -1,7 +1,7 @@
 Assignment 2 - Short Stack: Basic Two-tier Web Application using HTML/CSS/JS and Node.js  
 ===
 
-Due: September 9th, by 11:59 AM.
+Due: September 8th, by 11:59 AM.
 
 This assignment aims to introduce you to creating a prototype two-tiered web application. 
 Your application will include the use of HTML, CSS, JavaScript, and Node.js functionality, with active communication between the client and the server over the life of a user session.
@@ -25,8 +25,9 @@ Your application is required to demonstrate the use of the following concepts:
 
 HTML:
 - One or more [HTML Forms](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms), with any combination of form tags appropriate for the user input portion of the application
-- A results page displaying all data currently available on the server. You will most likely use a `<table>` tag for this, but `<ul>` or `<ol>` could also work and might be simpler to work with.
+- A results page displaying all data currently available on the server. You will most likely use a `<table>` tag for this, but `<ul>` or `<ol>` could also work and might be simpler to work with. Alternatively, you can create a single-page app (see Technical Acheivements) but this is not a requirement.
 - All pages should [validate](https://validator.w3.org)
+- If your app contains multple pages, they should all be accessible from the homepage (index.html)
 
 CSS:
 - CSS styling of the primary visual elements in the application
@@ -52,7 +53,7 @@ Deliverables
 
 Do the following to complete this assignment and acheive a base grade of 85%:
 
-1. Fork the starting project code (make sure to fork the 2021 repo!). This repo contains some starter code that may be used or discarded as needed.
+1. Fork the starting project code (make sure to fork the 2022 repo!). This repo contains some starter code that may be used or discarded as needed.
 2. Implement your project with the above requirements.
 3. Test your project to make sure that when someone goes to your main page, it displays correctly.
 4. Deploy your project to Glitch, and fill in the appropriate fields in your package.json file.
