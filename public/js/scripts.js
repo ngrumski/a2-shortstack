@@ -2,7 +2,7 @@ let name = undefined;
 const runReactionTest = (function () {
   let first_press = true;
   let time_initated = undefined;
-  const elem = document.getElementById("reaction_test");
+  const elem = document.querySelector(".reaction_test");
   async function turnButtonGreen(elem) {
     setTimeout(() => {
       if (!first_press) {
@@ -81,11 +81,13 @@ function drawScoreBoard(json) {
 
   elem.innerHTML = updatedHTML;
   const buttons = document.querySelectorAll("#rankings");
-  for(let i = 0; i < buttons.length; i ++){
-    buttons[i].onclick = function () {deleteScore(i+1);};
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = function () {
+      deleteScore(i + 1);
+    };
   }
 }
-function deleteScore(ranking){
+function deleteScore(ranking) {
   const json = {
       rank: ranking,
     },
@@ -105,4 +107,5 @@ window.onload = function () {
   const button = document.querySelector(".reaction_test");
   button.onclick = runReactionTest;
   updateScores();
+  setInterval(updateScores, 5000);
 };

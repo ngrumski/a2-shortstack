@@ -1,7 +1,9 @@
-.reaction_test{
+.reaction_test {
   background-color: blue;
   width: 100%;
   height: 50vh;
+  border-radius: 2.5%;
+  font-size: 2em;
 }
 
 body {
@@ -9,6 +11,39 @@ body {
   max-width: 50em;
   display: flex;
   justify-content: center;
-  flex-flow: column;
-  
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  max-width: 50em;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://cdn.glitch.global/9aaa1825-860d-4fa3-a2b5-cb866fbaa1ce/RobotoMono-VariableFont_wght.ttf?v=1662411749644) format("truetype");
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+#rankings {
+  border: none;
+  font-size: 1em;
+  background-color: white;
+}
+#rankings:hover{
+  color: red;
+}
+h1, p {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5em;
+}
+p {
+  font-size: 1.5em;
 }
