@@ -13,24 +13,25 @@ const runReactionTest = (function () {
     }, 2000 + 5000 * Math.random());
   }
   return function () {
-    let time_finished = new Date();
-    if (first_press) {
-      elem.style.backgroundColor = "red";
-      elem.innerHTML = "Get Ready.";
-      first_press = false;
-      turnButtonGreen(elem);
-    } else {
-      first_press = true;
-      if (time_initated != undefined) {
-        let time_taken = time_finished - time_initated;
-        elem.innerHTML = `Reaction Speed: ${time_taken} ms.`;
-        time_initated = undefined;
-        if (name === undefined) {
-          name = prompt("Enter your name for the scoreboard:");
-        }
-        sendScore(name, time_taken, time_finished);
+    if (name === undefined) {
+      alert("Enter your name for the scoreboard:");
+    }else{
+      let time_finished = new Date();
+      if (first_press) {
+        elem.style.backgroundColor = "red";
+        elem.innerHTML = "Get Ready.";
+        first_press = false;
+        turnButtonGreen(elem);
       } else {
-        elem.innerHTML = "Too Early :(";
+        first_press = true;
+        if (time_initated != undefined) {
+          let time_taken = time_finished - time_initated;
+          elem.innerHTML = `Reaction Speed: ${time_taken} ms.`;
+          time_initated = undefined;
+          sendScore(name, time_taken, time_finished);
+        } else {
+          elem.innerHTML = "Too Early :(";
+        }
       }
     }
   };
@@ -82,7 +83,8 @@ function drawScoreBoard(json) {
   elem.innerHTML = updatedHTML;
   const buttons = document.querySelectorAll("#rankings");
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].onclick = function () {
+    buttons[i].onclick = function (e) {
+      e.preventDefault()
       deleteScore(i + 1);
     };
   }
@@ -102,10 +104,20 @@ function deleteScore(ranking) {
 
   return false;
 }
+function setName(e){
+  e.preventDefault();
+  let input = document.querySelector( '#name' );
+  name = input.value;
+  input.disabled = true;
+  let button = document.querySelector("#nameEntry");
+  button.disabled = true;
+}
 
 window.onload = function () {
-  const button = document.querySelector(".reaction_test");
-  button.onclick = runReactionTest;
+  const button1 = document.querySelector(".reaction_test");
+  button1.onclick = runReactionTest;
+  const button2 = document.querySelector("#nameEntry");
+  button2.onclick = setName;
   updateScores();
   setInterval(updateScores, 5000);
 };

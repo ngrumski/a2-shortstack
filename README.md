@@ -7,7 +7,7 @@
   to the other times in the database. Then the database entries are sent back in the post response to update the local leaderboard. The user can play again to try to improve their time,
   and if they receive a faster time it will be updated on the leaderboard. Users can also delete times by clicking them on the leaderboard. They will be removed from the server when this
   happens and new ranks will be calculated. The leaderboard is automatically updated every 5 seconds.
-- The main HTML form used are buttons and the page validates.
+- The main HTML form is used to input the user's name and has a button and text box.
 - I used a flexbox for my layout, CSS uses element selectors, class selectors, and ID selectors.
 - I used Roboto for my main font and any sans-serf font as a backup.
 - 2 POST and 1 GET request are implemented in JS. "/submit" submits a new score to the server. "/delete" deletes a score at a given rank, and "/scores" retrieves the scores from the server
